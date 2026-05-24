@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pathfinder Admission Consultants — JOSAA & CSAB 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #08142E;
+    --navy-mid: #0D1F45;
+    --navy-light: #152A5C;
+    --gold: #C8922A;
+    --gold-light: #E8AE48;
+    --gold-pale: #F5D88A;
+    --cream: #FAF6EE;
+    --cream-dark: #EDE7D8;
+    --white: #FFFFFF;
+    --text-muted: rgba(255,255,255,0.55);
+    --text-dim: rgba(255,255,255,0.75);
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 4px 48px rgba(8,20,46,0.18);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-geo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-geo svg { width: 100%; height: 100%; }
+
+  .hero-top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 52px 0;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-icon {
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid var(--gold);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-icon svg { width: 26px; height: 26px; }
+
+  .logo-text .firm { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--white); letter-spacing: 0.01em; line-height: 1.2; }
+  .logo-text .tagline-small { font-size: 11px; color: var(--gold-light); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+
+  .year-stamp {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--gold-light);
+    border: 1px solid rgba(200,146,42,0.4);
+    padding: 6px 16px;
+    border-radius: 99px;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-body {
+    position: relative;
+    padding: 56px 52px 52px;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow-line { width: 36px; height: 1.5px; background: var(--gold); }
+
+  .eyebrow-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold-light);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-headline .gold-word { color: var(--gold-pale); }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 520px;
+    line-height: 1.65;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    padding: 9px 20px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .pill-gold { background: var(--gold); color: var(--navy); }
+  .pill-outline { border: 1px solid rgba(255,255,255,0.25); color: var(--white); }
+
+  .hero-stat-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 52px;
+  }
+
+  .hero-stat {
+    padding: 22px 24px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .stat-label { font-size: 12px; color: var(--text-muted); line-height: 1.4; font-weight: 400; }
+
+  /* ─── PLANS SECTION ─── */
+  .section { padding: 60px 52px; }
+  .section-alt { background: var(--cream); }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .ey-line { width: 28px; height: 2px; background: var(--gold); border-radius: 1px; }
+  .ey-text { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: #4A5568;
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .plan-card {
+    border: 1px solid #DDD5C4;
+    border-radius: 16px;
+    padding: 28px 24px;
+    background: var(--white);
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .plan-card:hover { transform: translateY(-3px); }
+
+  .plan-card.featured {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+
+  .plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 99px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .plan-letter {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .plan-letter-a { background: #EEF2FF; color: #3730A3; }
+  .plan-letter-b { background: #FFF3E0; color: #B45309; }
+  .plan-letter-c { background: var(--gold); color: var(--navy); }
+
+  .plan-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .plan-card.featured .plan-name { color: var(--white); }
+  .plan-card:not(.featured) .plan-name { color: var(--navy); }
+
+  .plan-desc {
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+
+  .plan-card.featured .plan-desc { color: rgba(255,255,255,0.65); }
+  .plan-card:not(.featured) .plan-desc { color: #64748B; }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 22px;
+  }
+
+  .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    margin-bottom: 7px;
+    line-height: 1.4;
+  }
+
+  .plan-card.featured .plan-features li { color: rgba(255,255,255,0.75); }
+  .plan-card:not(.featured) .plan-features li { color: #4A5568; }
+
+  .check-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .plan-card.featured .check-icon { background: var(--gold); }
+  .plan-card:not(.featured) .check-icon { background: #EAF3DE; }
+
+  .plan-card.featured .check-icon svg { stroke: var(--navy); }
+  .plan-card:not(.featured) .check-icon svg { stroke: #27500A; }
+
+  .plan-divider {
+    height: 1px;
+    margin-bottom: 18px;
+  }
+
+  .plan-card.featured .plan-divider { background: rgba(255,255,255,0.12); }
+  .plan-card:not(.featured) .plan-divider { background: #E8E2D8; }
+
+  .plan-price-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .plan-card.featured .plan-price-label { color: rgba(255,255,255,0.5); }
+  .plan-card:not(.featured) .plan-price-label { color: #94A3B8; }
+
+  .plan-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .plan-card.featured .plan-price { color: var(--gold-light); }
+  .plan-card:not(.featured) .plan-price { color: var(--navy); }
+
+  .plan-price span { font-size: 16px; font-weight: 400; opacity: 0.7; }
+
+  /* ─── HOW IT WORKS ─── */
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .steps-row::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: calc(12.5%);
+    right: calc(12.5%);
+    height: 1px;
+    background: #DDD5C4;
+    z-index: 0;
+  }
+
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .step-num-navy { background: var(--navy); color: var(--gold-light); }
+  .step-num-gold { background: var(--gold); color: var(--navy); }
+
+  .step-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+  .step-desc { font-size: 11.5px; color: #64748B; line-height: 1.55; font-weight: 300; }
+
+  /* ─── WHY US ─── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .why-item {
+    padding: 24px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid #E8E2D8;
+  }
+
+  .why-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  .why-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 7px; }
+  .why-desc { font-size: 12.5px; color: #64748B; line-height: 1.6; font-weight: 300; }
+
+  /* ─── DISCLAIMER BAND ─── */
+  .disclaimer {
+    background: #F8F4EE;
+    border-top: 1px solid #DDD5C4;
+    border-bottom: 1px solid #DDD5C4;
+    padding: 28px 52px;
+  }
+
+  .disc-title { font-size: 12px; font-weight: 600; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 7px; }
+
+  .disc-text { font-size: 12px; color: #64748B; line-height: 1.75; font-weight: 300; }
+
+  .disc-text strong { color: var(--navy); font-weight: 500; }
+
+  /* ─── CTA FOOTER ─── */
+  .cta-footer {
+    background: var(--navy);
+    padding: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .cta-left .cta-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .cta-left .cta-sub {
+    font-size: 14px;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  .cta-right {
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 36px;
+    border-radius: 99px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+
+  .cta-note { font-size: 11px; color: var(--text-muted); }
+
+  /* ─── BOTTOM BAR ─── */
+  .bottom-bar {
+    background: #040E22;
+    padding: 18px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bottom-bar .firm-small { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .bottom-bar .non-refund { font-size: 11px; color: var(--gold); font-weight: 500; }
+
+  /* ─── DIVIDER STRIPE ─── */
+  .gold-stripe { height: 3px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-pale) 50%, var(--gold) 100%); }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- GOLD STRIPE TOP -->
+  <div class="gold-stripe"></div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-geo">
+      <svg viewBox="0 0 900 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="780" cy="60" r="220" fill="rgba(200,146,42,0.04)"/>
+        <circle cx="780" cy="60" r="140" fill="rgba(200,146,42,0.05)"/>
+        <circle cx="780" cy="60" r="70" fill="rgba(200,146,42,0.07)"/>
+        <line x1="500" y1="0" x2="900" y2="400" stroke="rgba(200,146,42,0.06)" stroke-width="1"/>
+        <line x1="600" y1="0" x2="900" y2="300" stroke="rgba(200,146,42,0.04)" stroke-width="1"/>
+        <line x1="400" y1="520" x2="900" y2="120" stroke="rgba(200,146,42,0.03)" stroke-width="1"/>
+        <rect x="650" y="320" width="180" height="180" rx="16" fill="rgba(255,255,255,0.02)" transform="rotate(-15 740 410)"/>
+        <rect x="700" y="350" width="100" height="100" rx="8" fill="rgba(200,146,42,0.05)" transform="rotate(-15 750 400)"/>
+      </svg>
+    </div>
+
+    <div class="hero-top">
+      <div class="logo-mark">
+        <div class="logo-icon">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L3 8V18L13 24L23 18V8L13 2Z" stroke="#C8922A" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M13 2V24M3 8L23 18M23 8L3 18" stroke="#C8922A" stroke-width="1" stroke-opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="firm">Pathfinder Admission Consultants</div>
+          <div class="tagline-small">Expert guidance · JOSAA &amp; CSAB 2026</div>
+        </div>
+      </div>
+      <div class="year-stamp">Session 2026–27</div>
+    </div>
+
+    <div class="hero-body">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">JEE Main &amp; Advanced · Official counselling support</div>
+      </div>
+      <h1 class="hero-headline">
+        Your rank.<br>Your <span class="gold-word">dream college.</span><br>Our guidance.
+      </h1>
+      <p class="hero-sub">
+        Professional, data-driven preference list counselling for JOSAA 2026 and CSAB 2026 — NITs, IIITs, IITs, and GFTIs — crafted around your unique rank, category, and ambition.
+      </p>
+      <div class="hero-pills">
+        <div class="pill pill-gold">Register now for 2026</div>
+        <div class="pill pill-outline">JOSAA 2026</div>
+        <div class="pill pill-outline">CSAB 2026</div>
+        <div class="pill pill-outline">IITs · NITs · IIITs · GFTIs</div>
+      </div>
+    </div>
+
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Tailored service<br>plans available</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">75+</div>
+        <div class="stat-label">Curated preferences<br>in Master Profile</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">600+</div>
+        <div class="stat-label">Institutes covered<br>across JOSAA/CSAB</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">6</div>
+        <div class="stat-label">JOSAA allotment<br>rounds supported</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOLD STRIPE -->
+  <div class="gold-stripe"></div>
+
+  <!-- SERVICE PLANS -->
+  <div class="section">
+    <div class="section-eyebrow"><div class="ey-line"></div><div class="ey-text">Counselling service plans</div></div>
+    <h2 class="section-title">Choose the plan<br>that fits your ambition</h2>
+    <p class="section-desc">Every plan is prepared exclusively by your assigned counsellor — based on your rank, category, branch preferences, and historical JOSAA/CSAB closing rank data.</p>
+
+    <div class="plans-grid">
+
+      <div class="plan-card">
+        <div class="plan-letter plan-letter-a">A</div>
+        <div class="plan-name">Registration + Choice List<br>(up to 20 choices)</div>
+        <div class="plan-desc">Focused, curated preference list for candidates with a clear branch and institute direction.</div>
+        <ul class="plan-features">
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Up to 20 institute-branch choices
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Dream, Likely &amp; Safe tiers
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Rank &amp; category analysis
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Counsellor call included
+          </li>
+        </ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">Registration fee</div>
+        <div class="plan-price">₹2,000 <span>one-time</span></div>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-badge">Most popular</div>
+        <div class="plan-letter plan-letter-b" style="background:rgba(200,146,42,0.18);color:#E8AE48;">B</div>
+        <div class="plan-name">Registration + Choice List<br>(up to 50 choices)</div>
+        <div class="plan-desc">Comprehensive multi-round coverage for maximum allotment chances across all JOSAA rounds.</div>
+        <ul class="plan-features">
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Up to 50 institute-branch choices
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            All 6 JOSAA rounds covered
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Home state + All India quota
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            CSAB supernumerary guidance
+          </li>
+        </ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">Registration fee</div>
+        <div class="plan-price">₹5,000 <span style="color:rgba(255,255,255,0.5)">one-time</span></div>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-letter plan-letter-c">C</div>
+        <div class="plan-name">Master Profile<br>(Top 25 Colleges × 3 Branches)</div>
+        <div class="plan-desc">The most thorough plan — 75 ranked preferences built around your top 3 branch choices.</div>
+        <ul class="plan-features">
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            25 colleges per branch × 3 branches
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            75 total ranked preferences
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Deep personalised analysis
+          </li>
+          <li>
+            <div class="check-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            Priority counsellor support
+          </li>
+        </ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">Registration fee</div>
+        <div class="plan-price">₹10,000 <span>one-time</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section section-alt">
+    <div class="section-eyebrow"><div class="ey-line"></div><div class="ey-text">Simple process</div></div>
+    <h2 class="section-title" style="margin-bottom:40px">How it works</h2>
+    <div class="steps-row">
+      <div class="step-item">
+        <div class="step-num step-num-navy">1</div>
+        <div class="step-title">Fill intake form</div>
+        <div class="step-desc">Submit your JEE Main / Advanced scores, ranks, category, and branch preferences online</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num step-num-gold">2</div>
+        <div class="step-title">Pay &amp; upload docs</div>
+        <div class="step-desc">Select a plan, pay the registration fee, and upload your scorecards &amp; certificates</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num step-num-navy">3</div>
+        <div class="step-title">Counsellor prepares list</div>
+        <div class="step-desc">Your assigned counsellor analyses your profile and prepares a personalised preference list</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num step-num-gold">4</div>
+        <div class="step-title">Lock &amp; secure seat</div>
+        <div class="step-desc">Use the choice list to lock your preferences on the official JOSAA / CSAB portal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <div class="section">
+    <div class="section-eyebrow"><div class="ey-line"></div><div class="ey-text">Why choose us</div></div>
+    <h2 class="section-title" style="margin-bottom:36px">Built for serious candidates</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="why-title">Data-driven choices</div>
+        <div class="why-desc">All preference lists are built using historical JOSAA/CSAB opening and closing rank data, updated for 2026 seat matrices.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="why-title">Dedicated counsellor</div>
+        <div class="why-desc">Every applicant is assigned a specialist counsellor who studies your complete profile before preparing any suggestion.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="why-title">Category-aware ranking</div>
+        <div class="why-desc">EWS, OBC-NCL, SC, ST, and PwBD category rank advantages are factored into every preference to maximise allotment probability.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="why-title">Secure &amp; confidential</div>
+        <div class="why-desc">Your scores, ranks, and documents are stored securely and never shared with third parties without your written consent.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="why-title">Full document verification</div>
+        <div class="why-desc">All submitted scorecards, category certificates, and marksheets are cross-verified by our team before the choice list is prepared.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8922A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="why-title">Transparent advisory</div>
+        <div class="why-desc">We are honest about what we do — provide expert suggestions, not seat guarantees. Our advice empowers your decision, not replaces it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <div class="disc-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#08142E"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Important advisory disclaimer
+    </div>
+    <p class="disc-text">
+      <strong>Pathfinder Admission Consultants provides strictly advisory counselling services.</strong> All preference lists and institute suggestions are prepared solely on the basis of the candidate's declared JEE Main 2026 and/or JEE Advanced 2026 rank, category, and stated preferences, cross-referenced with historical JOSAA/CSAB closing rank data. <strong>These suggestions do not guarantee seat allotment, admission, or selection to any institute or branch.</strong> Actual seat allotment is determined exclusively by the Joint Seat Allocation Authority (JoSAA) and the Central Seat Allocation Board (CSAB). The final responsibility for locking choices on the official portal rests entirely with the candidate and/or their guardian. <strong>All fees paid are strictly non-refundable</strong> once registration is complete, regardless of allotment outcome or candidate withdrawal.
+    </p>
+  </div>
+
+  <!-- CTA FOOTER -->
+  <div class="cta-footer">
+    <div class="cta-left">
+      <div class="cta-headline">Begin your<br>2026 journey today.</div>
+      <div class="cta-sub">Fill the intake form · Select a plan · Let your counsellor take over</div>
+    </div>
+    <div class="cta-right">
+      <div class="cta-btn">Register now →</div>
+      <div class="cta-note">Plans starting at ₹2,000 · Non-refundable</div>
+    </div>
+  </div>
+
+  <!-- GOLD STRIPE BOTTOM -->
+  <div class="gold-stripe"></div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <div class="firm-small">© 2026 Pathfinder Admission Consultants · JOSAA 2026 · CSAB 2026</div>
+    <div class="non-refund">All fees non-refundable · Advisory service only</div>
+  </div>
+
+</div>
+
+</body>
+</html>
